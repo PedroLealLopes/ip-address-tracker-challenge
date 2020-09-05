@@ -6,3 +6,12 @@ $gray-800: hsl(0, 0%, 59%);
 :root {
   font-family: 'Rubik', sans-serif;
 }
+
+.test {
+  position: absolute;
+  top: 0;
+  left: 0;
+  text-align: center;
+  width: 100%;
+  background-color: lightblue;
+}
