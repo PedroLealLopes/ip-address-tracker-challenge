@@ -1,17 +1,248 @@
 @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap');
 
 $gray-900: hsl(0, 0%, 17%);
+$gray-divider: hsla(0, 0%, 17%, 0.2);
 $gray-800: hsl(0, 0%, 59%);
 
 :root {
   font-family: 'Rubik', sans-serif;
 }
 
-.test {
+.dark-mode-container {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  color: white;
+}
+
+.dark-mode-btn {
+  margin-left: 1rem;
+  font-size: 12px;
+  font-weight: 700;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 2px solid white;
+  background: none;
+  color: white;
+  cursor: pointer;
+}
+
+.dark-mode-btn:hover {
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.dark-mode-btn:focus {
+  outline: none;
+}
+
+.dark-mode-btn-dark {
+  border-color: #000 !important;
+}
+
+.loading {
   position: absolute;
   top: 0;
   left: 0;
   text-align: center;
   width: 100%;
-  background-color: lightblue;
+  background-color: #5f86f2;
+  color: white;
+  z-index: 10;
+}
+
+.loading-dark {
+  background-color: #36454f;
+}
+
+.form-background {
+  background-image: url('./img/pattern-bg.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: absolute;
+  top: 0;
+  width: 100vw;
+  z-index: -1;
+  height: 300px;
+}
+
+.form-background-dark {
+  filter: grayscale(100%) brightness(0.5);
+  border-bottom: #fff solid 2px;
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-top: 10px;
+  margin: 0 15px;
+}
+
+form {
+  display: flex;
+  flex-direction: row;
+  padding-top: 10px;
+}
+
+.form-header {
+  color: white;
+  font-weight: 400;
+  text-align: center;
+}
+
+.input {
+  font-family: 'Rubik', sans-serif;
+  flex-grow: 2;
+  border: none;
+  padding: 15px 25px;
+  border-radius: 15px 0 0 15px;
+  font-size: 18px;
+  letter-spacing: 0.5px;
+  width: 471px;
+}
+
+.input:focus {
+  outline: none;
+}
+
+.btn {
+  padding: 1rem;
+  background-color: #000;
+  border: none;
+  border-radius: 0 15px 15px 0;
+  width: 61px;
+  cursor: pointer;
+}
+
+.btn:active {
+  background-color: $gray-900;
+}
+
+.btn:focus {
+  outline: none;
+}
+
+.info-container {
+  display: flex;
+  flex-direction: row;
+  background-color: #fff;
+  border-radius: 15px;
+  margin: 50px 10px 0 10px;
+  min-width: 582px;
+  -webkit-box-shadow: 0px 0px 40px -10px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px 0px 40px -10px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 0px 40px -10px rgba(0, 0, 0, 0.75);
+}
+
+.info-item {
+  flex-grow: 1;
+  flex-basis: 0px;
+  padding: 40px 25px;
+  font-size: 28px;
+  font-weight: 500;
+  color: $gray-900;
+
+  h6 {
+    margin: 0;
+    margin-bottom: 15px;
+    color: $gray-800;
+    font-size: 12px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+}
+
+.info-divider {
+  place-self: center;
+  height: 100px;
+  border-left: 0.5px solid $gray-divider;
+}
+
+.test {
+  z-index: -5;
+  position: absolute;
+  top: 300px;
+  left: 0;
+  width: 100vw;
+  height: calc(100vh - 300px);
+}
+
+// -------------/ SMALLER SCREEN ADJUSTMENTS /---------------
+@media only screen and (max-width: 800px) {
+  .form-container {
+    padding-top: 0px;
+  }
+
+  form {
+    width: 100%;
+    padding-top: 5px;
+  }
+
+  .info-container {
+    margin: 50px 0 0 0;
+
+    h6 {
+      font-size: 12px;
+    }
+  }
+
+  .info-item {
+    padding: 40px 25px;
+    font-size: 18px;
+  }
+}
+
+// -------------/ MOBILE ADJUSTMENTS /---------------
+@media only screen and (max-width: 600px) {
+  .form-container {
+    padding-top: 0px;
+  }
+
+  form {
+    width: 100%;
+    padding-top: 5px;
+  }
+
+  .info-container {
+    width: 100%;
+    flex-direction: column;
+    min-width: 0px;
+    margin-top: 15px;
+    text-align: center;
+
+    h6 {
+      font-size: 12px;
+    }
+  }
+
+  .info-item {
+    padding: 10px 0px;
+    font-size: 20px;
+  }
+
+  .info-divider {
+    display: none;
+  }
+
+  .dark-mode-container {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    color: white;
+  }
+
+  .dark-mode-btn {
+    margin-left: 1rem;
+    font-size: 12px;
+    font-weight: 700;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 2px solid white;
+    background: none;
+    color: white;
+    cursor: pointer;
+  }
 }

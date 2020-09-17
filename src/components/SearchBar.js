@@ -1,27 +1,35 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
+import ArrowIcon from './ArrowIcon'
 
 export default class SearchBar extends Component {
   state = { term: '' }
 
   onFormSubmit = (event) => {
-    event.preventDefault();
-    
+    event.preventDefault()
+
     this.props.onSubmit(this.state.term)
   }
 
-  render(){
-    return(
-      <div>
-        <form onSubmit={this.onFormSubmit}>
-          <div>
-            <label>Ip Address: </label>
-            <input type="text"
-            value={this.state.term}
-            onChange={e => this.setState({term: e.target.value})}
-            />
-          </div>
-        </form>
-      </div>
-    );
+  checkForInput
+
+  render() {
+    return (
+      <>
+      <div className={this.props.darkMode ? 'form-background form-background-dark' : 'form-background'}></div>
+      <h1 className='form-header'>IP Address Tracker</h1>
+      <form onSubmit={this.onFormSubmit}>
+        <input
+          type='text'
+          className='input'
+          placeholder='Search for any IP address or domain'
+          value={this.state.term}
+          onChange={(e) => this.setState({ term: e.target.value })}
+        />
+        <button type='submit' className='btn'>
+          <ArrowIcon />
+        </button>
+      </form>
+      </>
+    )
   }
 }
