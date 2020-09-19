@@ -15,20 +15,26 @@ export default class SearchBar extends Component {
   render() {
     return (
       <>
-      <div className={this.props.darkMode ? 'form-background form-background-dark' : 'form-background'}></div>
-      <h1 className='form-header'>IP Address Tracker</h1>
-      <form onSubmit={this.onFormSubmit}>
-        <input
-          type='text'
-          className='input'
-          placeholder='Search for any IP address or domain'
-          value={this.state.term}
-          onChange={(e) => this.setState({ term: e.target.value })}
-        />
-        <button type='submit' className='btn'>
-          <ArrowIcon />
-        </button>
-      </form>
+        <div
+          className={
+            this.props.darkMode
+              ? 'form-background form-background-dark'
+              : 'form-background'
+          }
+        ></div>
+        <h1 className='form-header'>IP Address Tracker</h1>
+        <form onSubmit={this.onFormSubmit}>
+          <input
+            type='text'
+            className='input'
+            placeholder='Search for any IP address or domain'
+            value={this.state.term}
+            onChange={(e) => this.setState({ term: e.target.value })}
+          />
+          <button type='submit' className='btn'>
+            <ArrowIcon />
+          </button>
+        </form>
       </>
     )
   }
