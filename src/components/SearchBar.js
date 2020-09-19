@@ -27,11 +27,12 @@ export default class SearchBar extends Component {
           <input
             type='text'
             className='input'
+            aria-label="Input for searching for any IP address or domain"
             placeholder='Search for any IP address or domain'
             value={this.state.term}
             onChange={(e) => this.setState({ term: e.target.value })}
           />
-          <button type='submit' className='btn'>
+          <button aria-label="Search Button" type='submit' className='btn'>
             <ArrowIcon />
           </button>
         </form>
