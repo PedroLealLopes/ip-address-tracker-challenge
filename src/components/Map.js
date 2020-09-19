@@ -11,8 +11,8 @@ class MyApp extends React.Component {
     viewport: {
       width: '100%',
       height: '100%',
-      longitude: this.props.location.lng ? this.props.location.lng : -9.142685 ,
-      latitude: this.props.location.lat ? this.props.location.lat : 38.7223,
+      longitude: this.props.location.lng ? this.props.location.lng : -73.949997 ,
+      latitude: this.props.location.lat ? this.props.location.lat : 40.650002,
       zoom: 10,
       transitionDuration: 5000,
       transitionInterpolator: new FlyToInterpolator(),
@@ -49,7 +49,7 @@ class MyApp extends React.Component {
 
           mapStyle={this.props.darkMode ? 'mapbox://styles/pedrolopes98/ckex5c6wt0low19pacrglpa8m' : 'mapbox://styles/pedrolopes98/ckex5bddc1dyz19oruabxfzvr'}
         >
-          <Marker latitude={this.props.location.lat ? this.props.location.lat : 38.7223} longitude={this.props.location.lng ? this.props.location.lng : -9.142685}>
+          <Marker latitude={this.props.location.lat ? this.props.location.lat : 40.650002} longitude={this.props.location.lng ? this.props.location.lng : -73.949997}>
             <LocationMarkerSVG color='red' width='30px' height='30px'/>
           </Marker>
         </ReactMapGL>
